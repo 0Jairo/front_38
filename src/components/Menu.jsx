@@ -1,5 +1,10 @@
 import React from "react";
 
-export const Menu = () => {
-  return <div>Menu inicial</div>;
+export const Menu = (props) => {
+  return (
+    <div>
+      <h1>Menu inicial</h1>
+      <h2>Bienvenido: {props.usuario}</h2>
+    </div>
+  );
 };

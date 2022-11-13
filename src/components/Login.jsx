@@ -64,7 +64,7 @@ export const Login = () => {
         ></input>
       </form>
 
-      {miLogin === "true" && <Menu></Menu>}
+      {miLogin === "true" && <Menu usuario={miUser}></Menu>}
     </div>
   );
 };
