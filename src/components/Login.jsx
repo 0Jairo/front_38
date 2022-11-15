@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Menu } from "./Menu.jsx";
+import { ToastEstudiante } from "./ToastEstudiante.jsx";
 
 export const Login = () => {
   const [miLogin, setMiLogin] = useState("false");
@@ -65,6 +66,7 @@ export const Login = () => {
       </form>
 
       {miLogin === "true" && <Menu usuario={miUser}></Menu>}
+      {<ToastEstudiante></ToastEstudiante>}
     </div>
   );
 };
