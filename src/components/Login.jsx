@@ -32,6 +32,14 @@ export const Login = () => {
       className="container"
       style={{ background: "lightgray", marginTop: 20, padding: 20 }}
     >
+      {
+        <ToastEstudiante
+          Title={"Bienvenido"}
+          Msg={"Ingrese a nuestro sistema de estudiantes"}
+          duracion={4000}
+        ></ToastEstudiante>
+      }
+
       <form id="form_login">
         <div>
           <h1>Login</h1>
@@ -66,7 +74,6 @@ export const Login = () => {
       </form>
 
       {miLogin === "true" && <Menu usuario={miUser}></Menu>}
-      {<ToastEstudiante></ToastEstudiante>}
     </div>
   );
 };

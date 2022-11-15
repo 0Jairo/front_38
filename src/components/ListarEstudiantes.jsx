@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Table from "react-bootstrap/Table";
 import { FilaEstudiante } from "./FilaEstudiante.jsx";
-
-function dataTable() {
-  return <FilaEstudiante></FilaEstudiante>;
-}
+import { EditarEstudiante } from "./EditarEstudiante.jsx";
 
 export const ListarEstudiantes = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  function dataTable() {
+    return <FilaEstudiante handle={handleOpen}></FilaEstudiante>;
+  }
+
+  function handleOpen() {
+    setShowModal(true);
+  }
+
+  function handleClose() {
+    setShowModal(false);
+  }
+
   return (
     <div className="table-wrapper">
       <Table striped bordered hover>
@@ -20,6 +31,7 @@ export const ListarEstudiantes = () => {
         </thead>
         <tbody>{dataTable()}</tbody>
       </Table>
+      {showModal && <EditarEstudiante handleC={handleClose} />}
     </div>
   );
 };
